@@ -1,26 +1,138 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <!-- Import de la nav -->
+    <Nav/>
+    <!-- Import de mon router-view -->
+    <router-view/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// Imports de mes components
+import Nav from './components/Nav.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      Nav
   }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+
+nav{
+    z-index: 2;
+}
+
+#particles-js {
+    height: 100%;
+}
+.loginBox {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    min-height: 200px;
+    background: #000000;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.user {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #da63b9;
+    text-align: center;
+}
+
+.loginBox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.loginBox input[type="text"]:hover,
+.loginBox input[type="password"]:hover {
+    color: #42f3fa;
+    border: 1px solid #42f3fa;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+        0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+}
+.loginBox input[type="text"]:focus,
+.loginBox input[type="password"]:focus {
+    border-bottom: 2px solid #42f3fa;
+}
+.inputBox {
+    position: relative;
+}
+.inputBox span {
+    position: absolute;
+    top: 10px;
+    color: #262626;
+}
+.loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #da63b9;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.loginBox a {
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.loginBox a:hover {
+    color: #42f3fa;
+}
+p {
+    color: #0000ff;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 </style>
